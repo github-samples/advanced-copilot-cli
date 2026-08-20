@@ -1,0 +1,42 @@
+.env
+
+# Build artifacts
+target/
+*.class
+*.jar
+*.war
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node (in case future tooling)
+node_modules/
+
+# Module runner workspaces
+module-runs/
+issues/
+*-issues.md
+
+# Course assets must be checked in exactly as learners receive them, including
+# directories such as .github and .copilot.
+!assets/
+!assets/**
+!assets/**/.github/
+!assets/**/.github/**
+!assets/**/.copilot/
+!assets/**/.copilot/**
