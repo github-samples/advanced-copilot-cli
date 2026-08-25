@@ -3,7 +3,7 @@
 | [← Previous: Working with Copilot CLI][previous-lesson] | [Next: Enhancing the test suite with remote and delegation →][next-lesson] |
 |:--|--:|
 
-Every time you start a fresh Copilot CLI session, the agent only sees your raw files in the working directory. Without shared instructions, guidlines and codified conventions, you have to keep re-explaining your stacks and re-establishing your coding standards. That repetition makes sessions much slower and produces inconsistent output, so in this module, we build the **AI infrastructure** that makes future interactions with Copilot faster and more accurate.
+Every time you start a fresh Copilot CLI session, the agent only sees your raw files in the working directory. Without shared instructions, guidelines and codified conventions, you have to keep re-explaining your stacks and re-establishing your coding standards. That repetition makes sessions much slower and produces inconsistent output, so in this module, we build the **AI infrastructure** that makes future interactions with Copilot faster and more accurate.
 
 ## What you will learn
 
