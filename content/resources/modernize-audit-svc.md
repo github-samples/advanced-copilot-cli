@@ -219,12 +219,12 @@ If a future decision moves `audit-svc` from `JdbcTemplate` to Spring Data JPA fo
 
 ## Sources
 
-[pom-audit-L8]: https://github.com/github-samples/contoso-inventory/blob/f76115331340a3bed518a232f5b62b35f11c7740/services/audit-svc/pom.xml#L8
-[pom-audit-L19]: https://github.com/github-samples/contoso-inventory/blob/f76115331340a3bed518a232f5b62b35f11c7740/services/audit-svc/pom.xml#L19
-[pom-audit-L21]: https://github.com/github-samples/contoso-inventory/blob/f76115331340a3bed518a232f5b62b35f11c7740/services/audit-svc/pom.xml#L21-L22
-[pom-audit-L25]: https://github.com/github-samples/contoso-inventory/blob/f76115331340a3bed518a232f5b62b35f11c7740/services/audit-svc/pom.xml#L25-L39
-[pom-wf]: https://github.com/github-samples/contoso-inventory/blob/f76115331340a3bed518a232f5b62b35f11c7740/services/workforce-svc/pom.xml#L7-L21
-[repo-audit]: https://github.com/github-samples/contoso-inventory/blob/f76115331340a3bed518a232f5b62b35f11c7740/services/audit-svc/src/main/java/com/contoso/audit/AuditRepository.java
+[pom-audit-L8]: https://github.com/github-samples/contoso-inventory/blob/acc-base/services/audit-svc/pom.xml#L8
+[pom-audit-L19]: https://github.com/github-samples/contoso-inventory/blob/acc-base/services/audit-svc/pom.xml#L19
+[pom-audit-L21]: https://github.com/github-samples/contoso-inventory/blob/acc-base/services/audit-svc/pom.xml#L21-L22
+[pom-audit-L25]: https://github.com/github-samples/contoso-inventory/blob/acc-base/services/audit-svc/pom.xml#L25-L39
+[pom-wf]: https://github.com/github-samples/contoso-inventory/blob/acc-base/services/workforce-svc/pom.xml#L7-L21
+[repo-audit]: https://github.com/github-samples/contoso-inventory/blob/acc-base/services/audit-svc/src/main/java/com/contoso/audit/AuditRepository.java
 [spring-boot-4-migration]: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide
 [spring-framework-7]: https://docs.spring.io/spring-framework/reference/7.0/index.html
 [jackson-3]: https://github.com/FasterXML/jackson#jackson-30
