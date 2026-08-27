@@ -62,7 +62,7 @@ Two of those need help from outside the agent's own reasoning. Exploring the run
 Let's start by registering the Playwright MCP server for the quality assurance agent to be able to use later.
 
 > [!NOTE]
-> This codespace comes with a collection of approved local tools for Copilot to be able to use, like being able to create files, run builds, and other local operations. It's scoped to just the codespace, and not any external services. When it comes time to use other services Copilot will ask for approval, or you'll use a command to add it to its list of approved tools. Here you'll register the Playwright MCP server, so you'll start Copilot with `--allow-tool playwright` to add it to that approved list up front — the `/fleet` build can then drive the browser without stopping for permission mid-run.
+> This codespace comes with a collection of approved local tools for Copilot to use, like creating files, running builds, and other local operations. It's scoped to just the codespace, and not any external services. When it comes time to use other services, Copilot will ask for approval, or you'll use a command to add it to its list of approved tools. Here you'll register the Playwright MCP server, so you'll start Copilot with `--allow-tool playwright` to add it to that approved list up front — the `/fleet` build can then drive the browser without stopping for permission mid-run.
 
 1. Return to your codespace. If you closed it, navigate to your repository on GitHub.com, select **Code** > **Codespaces**, then reopen your existing codespace.
 2. Open a terminal window by selecting <kbd>Ctrl</kbd> + <kbd>`</kbd>.

@@ -60,8 +60,7 @@ You'll scaffold an MCP server that introspects AssetTrack's service databases an
 
 ### Start the databases and scaffold the server
 
-> [!NOTE]
-> This codespace comes with a collection of approved local tools for Copilot to be able to use, like being able to create files, run builds, and other local operations. It's scoped to just the codespace, and not any external services. When it comes time to use other services Copilot will ask for approval, or you'll use a command to add it to its list of approved tools.
+This codespace comes with a collection of approved local tools for Copilot to use, like creating files, running builds, and other local operations. It's scoped to just the codespace, and not any external services. When it comes time to use other services, Copilot will ask for approval, or you'll use a command to add it to its list of approved tools.
 
 1. Return to your codespace. If you closed it, navigate to your repository on GitHub.com, select **Code** > **Codespaces**, then reopen your existing codespace.
 2. Open a terminal by selecting <kbd>Ctrl</kbd> + <kbd>\`</kbd>, then start AssetTrack once so each service creates and seeds its database. Run `npm run dev` and leave it running. Each service's `dev:*` script creates its SQLite file under `services/<service>/data/`.
@@ -127,7 +126,7 @@ With our new MCP server created, let's create a pull request (PR) so it becomes 
 1. Use the `/new` prompt in Copilot to create a new session.
 2. Use the following prompt to tell Copilot to create a new branch, a commit, and a PR:
 
-    ```
+    ```text
     We just defined a new MCP server. Can you please create a new branch called add-mcp-server, generate a short commit message, then create the PR.
     ```
 

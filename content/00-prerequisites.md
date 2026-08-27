@@ -30,7 +30,7 @@ In this lesson, you will:
 
 When doing standard development, the first step is often to fork or clone the repository you'll be contributing to. For our course, since you'll be working through the exercises on your own, you'll grab a separate copy of the project. You'll do this by creating a new instance of the repository by using a [template repository][github-template-docs] on your own personal GitHub account.
 
-1. In your browser, navigate to [https://github.com/github-samples/contoso-inventory](https://github.com/github-samples/contoso-inventory).
+1. In your browser, navigate to the [contoso-inventory repository][contoso-inventory].
 2. Select **Use this template**.
 3. Select **Create a new repository**.
 4. Under **Owner**, select your personal GitHub account.

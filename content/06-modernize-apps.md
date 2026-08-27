@@ -86,8 +86,7 @@ You'll give Copilot structured intelligence for AssetTrack's Java code and a fir
 
 Start with the code signal: install the Eclipse JDT language server through the `lsp-setup` skill and commit its configuration so the whole team shares the same view of the code.
 
-> [!NOTE]
-> This codespace comes with a collection of approved local tools for Copilot to be able to use, like being able to create files, run builds, and other local operations. It's scoped to just the codespace, and not any external services. When it comes time to use other services — like the documentation MCP server you'll add later in this module — Copilot will ask for approval, or you'll use a command to add it to its list of approved tools.
+This codespace comes with a collection of approved local tools for Copilot to use, like creating files, running builds, and other local operations. It's scoped to just the codespace, and not any external services. When it comes time to use other services — like the documentation MCP server you'll add later in this module — Copilot will ask for approval, or you'll use a command to add it to its list of approved tools.
 
 1. Return to your codespace. If you closed it, navigate to your repository on GitHub.com, select **Code** > **Codespaces**, then reopen your existing codespace.
 2. Open a terminal by selecting <kbd>Ctrl</kbd> + <kbd>\`</kbd>, then start Copilot CLI from the repository root by running `copilot`.
