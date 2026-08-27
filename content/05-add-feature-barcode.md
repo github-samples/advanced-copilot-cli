@@ -61,14 +61,13 @@ Two of those need help from outside the agent's own reasoning. Exploring the run
 
 Let's start by registering the Playwright MCP server for the quality assurance agent to be able to use later.
 
+> [!NOTE]
+> `--yolo` lets Copilot read files, run commands, and call tools without pausing to ask. That's safe here because your codespace is a disposable container whose token only reaches this repository (or your fork), so anything Copilot does stays inside your copy of AssetTrack.
+
 1. Return to your codespace. If you closed it, navigate to your repository on GitHub.com, select **Code** > **Codespaces**, then reopen your existing codespace.
 2. Open a terminal window by selecting <kbd>Ctrl</kbd> + <kbd>`</kbd>.
 3. Create and switch to a feature branch with `git switch -c feat/barcode-support`.
 4. Run `copilot --yolo` from the repository root to start Copilot CLI.
-
-> [!NOTE]
-> `--yolo` lets Copilot read files, run commands, and call tools without pausing to ask. That's safe here because your codespace is a disposable container whose token only reaches this repository (or your fork), so anything Copilot does stays inside your copy of AssetTrack.
-
 5. In Copilot CLI, run the command `/mcp add` to open the MCP registration panel.
 6. Fill out the form, using <kbd>Tab</kbd> to move between fields, with the following information:
     - **Server Name**: `playwright`

@@ -60,13 +60,12 @@ You'll scaffold an MCP server that introspects AssetTrack's service databases an
 
 ### Start the databases and scaffold the server
 
-1. Return to your codespace. If you closed it, navigate to your repository on GitHub.com, select **Code** > **Codespaces**, then reopen your existing codespace.
-2. Open a terminal by selecting <kbd>Ctrl</kbd> + <kbd>\`</kbd>, then start AssetTrack once so each service creates and seeds its database. Run `npm run dev` and leave it running. Each service's `dev:*` script creates its SQLite file under `services/<service>/data/`.
-3. Open a second terminal by selecting <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>\`</kbd>, then run `copilot --yolo` from the repository root to start Copilot CLI.
-
 > [!NOTE]
 > `--yolo` lets Copilot read files, run commands, and call tools without pausing to ask. That's safe here because your codespace is a disposable container whose token only reaches this repository (or your fork), so anything Copilot does stays inside your copy of AssetTrack.
 
+1. Return to your codespace. If you closed it, navigate to your repository on GitHub.com, select **Code** > **Codespaces**, then reopen your existing codespace.
+2. Open a terminal by selecting <kbd>Ctrl</kbd> + <kbd>\`</kbd>, then start AssetTrack once so each service creates and seeds its database. Run `npm run dev` and leave it running. Each service's `dev:*` script creates its SQLite file under `services/<service>/data/`.
+3. Open a second terminal by selecting <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>\`</kbd>, then run `copilot --yolo` from the repository root to start Copilot CLI.
 4. Run `/models`, select **Auto** from the list, and select <kbd>Enter</kbd>.
 5. Ask Copilot to scaffold the catalog server, keeping it read-only and pointed at the dev databases:
 

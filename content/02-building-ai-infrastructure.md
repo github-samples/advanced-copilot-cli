@@ -69,12 +69,11 @@ Let's start by capturing existing conventions and patterns in the codebase in a 
 
 ### Generate the baseline instructions
 
-1. Return to your codespace. If you closed it, navigate to your repository on GitHub.com, select **Code** > **Codespaces**, then reopen your existing codespace.
-2. Open a terminal by selecting <kbd>Ctrl</kbd> + <kbd>`</kbd>, then run `copilot --yolo` from the repository root to start Copilot CLI.
-
 > [!NOTE]
 > `--yolo` lets Copilot read files, run commands, and call tools without pausing to ask. That's safe here because your codespace is a disposable container whose token only reaches this repository (or your fork), so anything Copilot does stays inside your copy of AssetTrack.
 
+1. Return to your codespace. If you closed it, navigate to your repository on GitHub.com, select **Code** > **Codespaces**, then reopen your existing codespace.
+2. Open a terminal by selecting <kbd>Ctrl</kbd> + <kbd>`</kbd>, then run `copilot --yolo` from the repository root to start Copilot CLI.
 3. Run `/models`, select **Auto** from the list, and select <kbd>Enter</kbd>.
 4. Run `/init`.
 

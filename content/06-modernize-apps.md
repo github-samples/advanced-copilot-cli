@@ -86,12 +86,11 @@ You'll give Copilot structured intelligence for AssetTrack's Java code and a fir
 
 Start with the code signal: install the Eclipse JDT language server through the `lsp-setup` skill and commit its configuration so the whole team shares the same view of the code.
 
-1. Return to your codespace. If you closed it, navigate to your repository on GitHub.com, select **Code** > **Codespaces**, then reopen your existing codespace.
-2. Open a terminal by selecting <kbd>Ctrl</kbd> + <kbd>\`</kbd>, then run `copilot --yolo` from the repository root to start Copilot CLI.
-
 > [!NOTE]
 > `--yolo` lets Copilot read files, run commands, and call tools without pausing to ask. That's safe here because your codespace is a disposable container whose token only reaches this repository (or your fork), so anything Copilot does stays inside your copy of AssetTrack.
 
+1. Return to your codespace. If you closed it, navigate to your repository on GitHub.com, select **Code** > **Codespaces**, then reopen your existing codespace.
+2. Open a terminal by selecting <kbd>Ctrl</kbd> + <kbd>\`</kbd>, then run `copilot --yolo` from the repository root to start Copilot CLI.
 3. Run `/models`, select **Auto** from the list, and select <kbd>Enter</kbd>.
 4. Ask Copilot to install the skill directly from the [Awesome GitHub Copilot][awesome-copilot] collection by entering the prompt:
 
