@@ -59,7 +59,11 @@ The goal is a tight evidence loop: scaffold tests, run them, classify each failu
 3. Run `npm run install:all` to ensure dependencies are up to date.
 4. Start the app with `npm run dev`, open `http://localhost:4321` or the forwarded Codespaces URL, and confirm the AssetTrack UI loads. 
 5. Stop the dev server by pressing <kbd>ctrl</kbd>+<kbd>C</kbd> in the terminal.
-6. If you don't have a Copilot CLI session already running, type `copilot` in the terminal to start a new session.
+6. If you don't have a Copilot CLI session already running, run `copilot --yolo` in the terminal to start one.
+
+> [!NOTE]
+> `--yolo` lets Copilot read files, run commands, and call tools without pausing to ask. That's safe here because your codespace is a disposable container whose token only reaches this repository (or your fork), so anything Copilot does stays inside your copy of AssetTrack.
+
 7. Ask for a read-only test inventory:
 
     ```text
@@ -118,7 +122,7 @@ Now let's prove you can control the active Copilot CLI session from GitHub while
     Run the Playwright suite again. If the app needs to start first, use the existing Playwright webServer configuration. Summarize any failures as test bug, app accessibility gap, or environment/startup issue.
     ```
 
-5. Respond to permission prompts from the remote UI.
+5. Watch the run proceed. The remote UI drives the same local session you launched with `--yolo`, so its tool calls are auto-approved; respond to any prompt the remote UI does surface.
 6. If remote sessions are disabled, record that limitation and continue with the delegation exercise.
 7. When finished, enter `/remote off`. You can also enter `/remote` without an argument to check the current status.
 

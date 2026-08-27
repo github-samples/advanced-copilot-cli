@@ -86,28 +86,29 @@ You'll give Copilot structured intelligence for AssetTrack's Java code and a fir
 
 Start with the code signal: install the Eclipse JDT language server through the `lsp-setup` skill and commit its configuration so the whole team shares the same view of the code.
 
-This codespace comes with a collection of approved local tools for Copilot to use, like creating files, running builds, and other local operations. It's scoped to just the codespace, and not any external services. When it comes time to use other services — like the documentation MCP server you'll add later in this module — Copilot will ask for approval, or you'll use a command to add it to its list of approved tools.
-
 1. Return to your codespace. If you closed it, navigate to your repository on GitHub.com, select **Code** > **Codespaces**, then reopen your existing codespace.
-2. Open a terminal by selecting <kbd>Ctrl</kbd> + <kbd>\`</kbd>, then start Copilot CLI from the repository root by running `copilot`.
-3. If prompted, trust the project folder by selecting **Yes, and remember this folder for future sessions**.
-4. Run `/models`, select **Auto** from the list, and select <kbd>Enter</kbd>.
-5. Ask Copilot to install the skill directly from the [Awesome GitHub Copilot][awesome-copilot] collection by entering the prompt:
+2. Open a terminal by selecting <kbd>Ctrl</kbd> + <kbd>\`</kbd>, then run `copilot --yolo` from the repository root to start Copilot CLI.
+
+> [!NOTE]
+> `--yolo` lets Copilot read files, run commands, and call tools without pausing to ask. That's safe here because your codespace is a disposable container whose token only reaches this repository (or your fork), so anything Copilot does stays inside your copy of AssetTrack.
+
+3. Run `/models`, select **Auto** from the list, and select <kbd>Enter</kbd>.
+4. Ask Copilot to install the skill directly from the [Awesome GitHub Copilot][awesome-copilot] collection by entering the prompt:
 
     ```text
     Install the lsp-setup skill from awesome-copilot
     ```
 
     Copilot fetches the skill and writes it into the project skills directory as `.github/skills/lsp-setup/`.
-6. Start a new chat with `/new` so Copilot loads the newly installed skill. Confirm it's available by running `/skills list` — you should see `lsp-setup` in the list — then start the setup by entering the prompt:
+5. Start a new chat with `/new` so Copilot loads the newly installed skill. Confirm it's available by running `/skills list` — you should see `lsp-setup` in the list — then start the setup by entering the prompt:
 
     ```text
     setup lsp
     ```
 
-7. When asked which language, choose **Java**. When asked about scope, choose the repository-level configuration so it's written to `.github/lsp.json` and shared with the team. The exact prompts vary depending on the approach Copilot takes, so follow the remaining prompts and use your best judgment to install the server.
+6. When asked which language, choose **Java**. When asked about scope, choose the repository-level configuration so it's written to `.github/lsp.json` and shared with the team. The exact prompts vary depending on the approach Copilot takes, so follow the remaining prompts and use your best judgment to install the server.
 
-8. When setup finishes, load the configuration by running `/lsp reload`, then confirm the server starts by running `/lsp test java`. You should see the `java` server start and report ready.
+7. When setup finishes, load the configuration by running `/lsp reload`, then confirm the server starts by running `/lsp test java`. You should see the `java` server start and report ready.
 
     The skill writes a `.github/lsp.json` that registers the [Eclipse JDT Language Server (`jdtls`)][jdtls] for Java. It looks like this:
 
@@ -128,7 +129,7 @@ This codespace comes with a collection of approved local tools for Copilot to us
 > [!NOTE]
 > The committed `.github/lsp.json` tells Copilot how to launch `jdtls`, but each environment still needs the server installed — that's what the `lsp-setup` skill does. A teammate who clones the repo runs the same skill once to install `jdtls` locally. It runs on the Java 21 JDK the AssetTrack devcontainer provides, which both builds `audit-svc` and `auth-svc` — they target Java 17 — and analyzes their source without trouble.
 
-9. To complete the installation, exit Copilot CLI by using the command `/exit`, then `/exit` again, then re-open Copilot by running `copilot`.
+8. To complete the installation, exit Copilot CLI by using the command `/exit`, then `/exit` again, then re-open Copilot by running `copilot --yolo`.
 
 With `.github/lsp.json` committed and `jdtls` installed, every contributor now gets the same compiler-backed view of AssetTrack's Java code.
 

@@ -60,14 +60,15 @@ You'll scaffold an MCP server that introspects AssetTrack's service databases an
 
 ### Start the databases and scaffold the server
 
-This codespace comes with a collection of approved local tools for Copilot to use, like creating files, running builds, and other local operations. It's scoped to just the codespace, and not any external services. When it comes time to use other services, Copilot will ask for approval, or you'll use a command to add it to its list of approved tools.
-
 1. Return to your codespace. If you closed it, navigate to your repository on GitHub.com, select **Code** > **Codespaces**, then reopen your existing codespace.
 2. Open a terminal by selecting <kbd>Ctrl</kbd> + <kbd>\`</kbd>, then start AssetTrack once so each service creates and seeds its database. Run `npm run dev` and leave it running. Each service's `dev:*` script creates its SQLite file under `services/<service>/data/`.
-3. Open a second terminal by selecting <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>\`</kbd>, then start Copilot CLI from the repository root by running `copilot`.
-4. If prompted, trust the project folder by selecting **Yes, and remember this folder for future sessions**.
-5. Run `/models`, select **Auto** from the list, and select <kbd>Enter</kbd>.
-6. Ask Copilot to scaffold the catalog server, keeping it read-only and pointed at the dev databases:
+3. Open a second terminal by selecting <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>\`</kbd>, then run `copilot --yolo` from the repository root to start Copilot CLI.
+
+> [!NOTE]
+> `--yolo` lets Copilot read files, run commands, and call tools without pausing to ask. That's safe here because your codespace is a disposable container whose token only reaches this repository (or your fork), so anything Copilot does stays inside your copy of AssetTrack.
+
+4. Run `/models`, select **Auto** from the list, and select <kbd>Enter</kbd>.
+5. Ask Copilot to scaffold the catalog server, keeping it read-only and pointed at the dev databases:
 
     ```text
     Build an MCP server in a new mcp-servers/assettrack-catalog/ folder that gives Copilot a read-only schema catalog of AssetTrack's databases. It should introspect the databases live and expose the schema through a few tools.
@@ -83,7 +84,7 @@ This codespace comes with a collection of approved local tools for Copilot to us
 > [!NOTE]
 > You used plan mode in earlier modules to think through larger changes before writing any code, and it would work well here too. We're keeping this prompt short and direct so you can stay focused on the MCP concepts rather than the build itself.
 
-7. Review the generated code before running anything. Confirm it opens each database read-only, introspects live (no hard-coded or stored schema), exposes only the three read tools, and reads the repository root from the environment rather than hard-coding a path.
+6. Review the generated code before running anything. Confirm it opens each database read-only, introspects live (no hard-coded or stored schema), exposes only the three read tools, and reads the repository root from the environment rather than hard-coding a path.
 
 ### Run and register the server
 

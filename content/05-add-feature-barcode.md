@@ -61,17 +61,13 @@ Two of those need help from outside the agent's own reasoning. Exploring the run
 
 Let's start by registering the Playwright MCP server for the quality assurance agent to be able to use later.
 
-> [!NOTE]
-> This codespace comes with a collection of approved local tools for Copilot to use, like creating files, running builds, and other local operations. It's scoped to just the codespace, and not any external services. When it comes time to use other services, Copilot will ask for approval, or you'll use a command to add it to its list of approved tools. Here you'll register the Playwright MCP server, so you'll start Copilot with `--allow-tool playwright` to add it to that approved list up front — the `/fleet` build can then drive the browser without stopping for permission mid-run.
-
 1. Return to your codespace. If you closed it, navigate to your repository on GitHub.com, select **Code** > **Codespaces**, then reopen your existing codespace.
 2. Open a terminal window by selecting <kbd>Ctrl</kbd> + <kbd>`</kbd>.
 3. Create and switch to a feature branch with `git switch -c feat/barcode-support`.
-4. Start Copilot CLI from the repository root, adding the Playwright server you'll register next to its list of approved tools:
+4. Run `copilot --yolo` from the repository root to start Copilot CLI.
 
-    ```bash
-    copilot --allow-tool playwright
-    ```
+> [!NOTE]
+> `--yolo` lets Copilot read files, run commands, and call tools without pausing to ask. That's safe here because your codespace is a disposable container whose token only reaches this repository (or your fork), so anything Copilot does stays inside your copy of AssetTrack.
 
 5. In Copilot CLI, run the command `/mcp add` to open the MCP registration panel.
 6. Fill out the form, using <kbd>Tab</kbd> to move between fields, with the following information:
