@@ -67,7 +67,7 @@ The harness emits named events across the session lifecycle and your hook config
 For the test-and-lint feedback loop in this module, the events that matter most are:
 
 - `postToolUse` - to run checks after each file edit and feed results back to the agent loop
-- `agentStop` - to optionally block the agent from finishing a turn if checks are red).
+- `agentStop` - to optionally block the agent from finishing a turn if checks are red.
 
 ### Reading hook input and writing hook output
 
@@ -192,8 +192,8 @@ AssetTrack's checks span four different stacks - .NET, Java, Python, TypeScript,
 3. Download `.github/hooks/scripts/test-router.sh`, which reads the edited file path from the `postToolUse` payload, runs the right test runner for that stack and emits the result as `additionalContext`. The same script also handles `agentStop` by looking at changed files and blocking only when the relevant stack's tests fail:
 
     ```bash
-    curl -o .github/hooks/scripts/test-router.sh \
-      https://raw.githubusercontent.com/github-samples/advanced-copilot-cli/main/assets/04/.github/hooks/scripts/test-router.sh
+    curl --fail -o .github/hooks/scripts/test-router.sh \
+      https://raw.githubusercontent.com/github-samples/advanced-copilot-cli/1af928893a2e180dc3b2a469b22712a78b1f74a7/assets/04/.github/hooks/scripts/test-router.sh
     ```
 
 4. Make the script executable:

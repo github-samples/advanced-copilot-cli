@@ -179,7 +179,7 @@ Now let's add a reusable `Accessibility Expert` custom agent and use it against 
 1. Ask Copilot to work with the Accessibility Expert agent to produce an accessibility report for the Astro frontend with recommendations
 
     ```text
-    Work with the the accessibility expert to review the Astro frontend code and produce an accessibility report with specific recommendations for improvements based on WCAG 2.2 AA standards.
+    Work with the accessibility expert to review the Astro frontend code and produce an accessibility report with specific recommendations for improvements based on WCAG 2.2 AA standards.
     ```
 
     Notice that the main agent passes the task to the Accessibility Expert agent, which then finds the custom instructions for Astro/React you created earlier, tracks the relevant files and produces a report with specific, actionable recommendations that reference WCAG success criteria and specific selectors in the code.
@@ -192,7 +192,7 @@ Now let's add a reusable `Accessibility Expert` custom agent and use it against 
 
 ## Agent skills
 
-Custom agents introduce *specialized personas*. **Agent skills** change what Copilot *knows* to do. A skill is a packaged capability, could include an instruction set, optional scripts and resources - that the agent can invoke **at runtime** when the task matches its trigger. Skills live in `.copilot/skills/` (for repo-scoped) or `~/.copilot/skills/` (for user-scoped) and in Copilot CLI, you use `/skills` to view and manage them.
+Custom agents introduce *specialized personas*. **Agent skills** change what Copilot *knows* to do. A skill is a packaged capability, could include an instruction set, optional scripts and resources - that the agent can invoke **at runtime** when the task matches its trigger. Skills live in `.github/skills/` (for repo-scoped) or `~/.copilot/skills/` (for user-scoped) and in Copilot CLI, you use `/skills` to view and manage them.
 
 The new AI infrastructure for Contoso is coming together nicely, but there's one more piece to add. Now that you have a baseline for how copilot should approach making updates locally, we want to bootstrap the contribution standards that should be followed to land these updates through channels that integrate with the team's existing workflows for enhanced collaboration, human-in-the-loop review and auditability.
 

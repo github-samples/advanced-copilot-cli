@@ -3,7 +3,7 @@
 | [← Previous: Modernizing apps with Copilot CLI][previous-lesson] | [Next: Wrap-up →][next-lesson] |
 |:--|--:|
 
-Everything so far has been scoped to a single repository, or to you as the individual developer. The instructions, custom agents, agent skills, and lifecycle hooks you committed to AssetTrack do travel to anyone who clones it — but they stop at that repo's boundary. The MCP configuration was saved to your user settings. In practice, though, there are always rules, agents, skills, and shared resources that shouldn't belong to single repository; they encode how the whole organization works, and every developer at Contoso should get them automatically. This module moves that setup to the enterprise level: a custom MCP server that exposes a shared resource, a plugin that bundles your AI infrastructure into a single installable unit, and enterprise standards that push it to every developer without anyone cloning a repo or copying a file.
+Everything so far has been scoped to a single repository, or to you as the individual developer. The instructions, custom agents, agent skills, and lifecycle hooks you committed to AssetTrack do travel to anyone who clones it — but they stop at that repo's boundary. The MCP configuration was saved to your user settings. In practice, though, there are always rules, agents, skills, and shared resources that shouldn't belong to a single repository; they encode how the whole organization works, and every developer at Contoso should get them automatically. This module moves that setup to the enterprise level: a custom MCP server that exposes a shared resource, a plugin that bundles your AI infrastructure into a single installable unit, and enterprise standards that push it to every developer without anyone cloning a repo or copying a file.
 
 ## What you will learn
 
@@ -27,7 +27,7 @@ Closing that gap means lifting the setup out of AssetTrack and up to where the w
 > git checkout start-of-module-07
 > ```
 >
-> The plugin and MCP work in this module targets your fork only, but the patterns are written for org-wide rollout.
+> The plugin and MCP work in this module target your fork only, but the patterns are written for org-wide rollout.
 
 ## Custom MCP servers as shared infrastructure
 
@@ -60,9 +60,11 @@ You'll scaffold an MCP server that introspects AssetTrack's service databases an
 
 ### Start the databases and scaffold the server
 
+This codespace comes with a collection of approved local tools for Copilot to use, like creating files, running builds, and other local operations. It's scoped to just the codespace, and not any external services. When it comes time to use other services, Copilot will ask for approval, or you'll use a command to add it to its list of approved tools.
+
 1. Return to your codespace. If you closed it, navigate to your repository on GitHub.com, select **Code** > **Codespaces**, then reopen your existing codespace.
 2. Open a terminal by selecting <kbd>Ctrl</kbd> + <kbd>\`</kbd>, then start AssetTrack once so each service creates and seeds its database. Run `npm run dev` and leave it running. Each service's `dev:*` script creates its SQLite file under `services/<service>/data/`.
-3. Open a second terminal by selecting <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>\`</kbd>, then start Copilot CLI from the repository root by running `copilot --yolo`.
+3. Open a second terminal by selecting <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>\`</kbd>, then start Copilot CLI from the repository root by running `copilot`.
 4. If prompted, trust the project folder by selecting **Yes, and remember this folder for future sessions**.
 5. Run `/models`, select **Auto** from the list, and select <kbd>Enter</kbd>.
 6. Ask Copilot to scaffold the catalog server, keeping it read-only and pointed at the dev databases:
@@ -106,7 +108,7 @@ You'll scaffold an MCP server that introspects AssetTrack's service databases an
 3. Select <kbd>Ctrl</kbd> + <kbd>S</kbd> to save the configuration.
 4. Select <kbd>Esc</kbd> to exit the configuration screen.
 5. Confirm the server loaded by running `/mcp` and checking that `assettrack-catalog` appears with its three tools.
-6. Start a new session by using the command `/new` and selecting <kbd>Enter</kbd>.:
+6. Start a new session by using the command `/new` and selecting <kbd>Enter</kbd>.
 7. Test the new MCP server by using the following prompt:
 
     ```text
@@ -122,13 +124,13 @@ With the catalog registered, "where does this data live?" is now a first-class t
 With our new MCP server created, let's create a pull request (PR) so it becomes part of our project!
 
 1. Use the `/new` prompt in Copilot to create a new session.
-2. Use the following prompt to tell Copilot to create a new branch, a commit and a PR, and to merge the PR when done:
+2. Use the following prompt to tell Copilot to create a new branch, a commit, and a PR:
 
-    ```
-    We just defined a new MCP server. Can you please create a new branch called add-mcp-server, generate a short commit message, then create the PR. Once the CI completes for the PR, go ahead and merge it.
+    ```text
+    We just defined a new MCP server. Can you please create a new branch called add-mcp-server, generate a short commit message, then create the PR.
     ```
 
-Copilot will get to work on creating the PR and merging it. This will take just a couple of minutes to complete.
+Copilot creates the branch, commit, and PR, then stops. Because this MCP server reaches the service databases and will be distributed as shared infrastructure, treat the PR as a human review gate: read the diff yourself, let CI finish, and merge it only once you're satisfied it's correct. Building that review habit for code that runs organization-wide matters more than shaving off a few minutes.
 
 ## Plugins: bundling AI infrastructure
 
@@ -221,9 +223,9 @@ The AssetTrack AI infrastructure is now a single unit. Everything you built piec
 
 Installing from your own marketplace solves the problem for you; solving it for everyone is a distribution problem. This can be tackled in three steps:
 
-1. host the marketplace where the whole organization can reach it, 
-2. make the plugin install automatically through enterprise-managed plugin standards,
-3.  and govern org-wide personas through enterprise custom agents.|
+1. Host the marketplace where the whole organization can reach it.
+2. Make the plugin install automatically through enterprise-managed plugin standards.
+3. Govern org-wide personas through enterprise custom agents.
 
 These are driven from the enterprise's `.github-private` repository, so their rules are version-controlled and reviewed like any other change.
 
