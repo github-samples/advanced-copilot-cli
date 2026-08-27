@@ -35,11 +35,12 @@ When doing standard development, the first step is often to fork or clone the re
 3. Select **Create a new repository**.
 4. Under **Owner**, select your personal GitHub account.
 5. For **Repository name**, enter `AssetTrack`.
-6. Leave the remaining options at their defaults.
-7. Select **Create repository**.
-8. Once the new repository has been created, select the **Code** button.
-9. Switch to the **Codespaces** tab.
-10. Select **Create codespace on main**.
+6. Select **Include all branches** so the module catch-up branches (`start-of-module-02` through `start-of-module-07`) are copied to your repository.
+7. Leave the remaining options at their defaults.
+8. Select **Create repository**.
+9. Once the new repository has been created, select the **Code** button.
+10. Switch to the **Codespaces** tab.
+11. Select **Create codespace on main**.
 
 > [!NOTE]
 > The first launch of the codespace will take a few minutes. AssetTrack uses a custom devcontainer that includes the runtimes for all four stacks (Java, Node/Astro, .NET, Python/FastAPI), and the container image needs to be built the first time the codespace starts. Subsequent launches will be much faster.

@@ -64,7 +64,7 @@ GitHub Copilot provides access to numerous models of various levels, including t
 As you work through the application modernization flow, you'll move back and forth between higher-end tasks, like planning and research, to lower-end tasks, like writing code and generating tests. With `/model` you can switch to an appropriate model depending on the needs of the current ask, both saving time and reducing the credit usage necessary to complete the operation. For example, you might choose Claude Opus 4.8 to build the plan, then assign an agent using MAI-Flash-1 to implement the code as defined in the plan.
 
 > [!NOTE]
-> During our exploration here we're going to use `auto` as our model choice, which allows Copilot to choose the model it thinks is most appropriate for the task. This is both to streamline the lesson and to allow for completion of the course with reduced credit usage. When it comes time to being complex operations on your production codebase, you can deploy various strategies to choose the right model at the right time.
+> During our exploration here we're going to use `auto` as our model choice, which allows Copilot to choose the model it thinks is most appropriate for the task. This is both to streamline the lesson and to allow for completion of the course with reduced credit usage. When it comes time to perform complex operations on your production codebase, you can deploy various strategies to choose the right model at the right time.
 
 ## Giving Copilot better signal: LSP and documentation MCP
 
@@ -86,8 +86,11 @@ You'll give Copilot structured intelligence for AssetTrack's Java code and a fir
 
 Start with the code signal: install the Eclipse JDT language server through the `lsp-setup` skill and commit its configuration so the whole team shares the same view of the code.
 
+> [!NOTE]
+> This codespace comes with a collection of approved local tools for Copilot to be able to use, like being able to create files, run builds, and other local operations. It's scoped to just the codespace, and not any external services. When it comes time to use other services — like the documentation MCP server you'll add later in this module — Copilot will ask for approval, or you'll use a command to add it to its list of approved tools.
+
 1. Return to your codespace. If you closed it, navigate to your repository on GitHub.com, select **Code** > **Codespaces**, then reopen your existing codespace.
-2. Open a terminal by selecting <kbd>Ctrl</kbd> + <kbd>\`</kbd>, then start Copilot CLI from the repository root by running `copilot --yolo`.
+2. Open a terminal by selecting <kbd>Ctrl</kbd> + <kbd>\`</kbd>, then start Copilot CLI from the repository root by running `copilot`.
 3. If prompted, trust the project folder by selecting **Yes, and remember this folder for future sessions**.
 4. Run `/models`, select **Auto** from the list, and select <kbd>Enter</kbd>.
 5. Ask Copilot to install the skill directly from the [Awesome GitHub Copilot][awesome-copilot] collection by entering the prompt:
@@ -126,7 +129,7 @@ Start with the code signal: install the Eclipse JDT language server through the 
 > [!NOTE]
 > The committed `.github/lsp.json` tells Copilot how to launch `jdtls`, but each environment still needs the server installed — that's what the `lsp-setup` skill does. A teammate who clones the repo runs the same skill once to install `jdtls` locally. It runs on the Java 21 JDK the AssetTrack devcontainer provides, which both builds `audit-svc` and `auth-svc` — they target Java 17 — and analyzes their source without trouble.
 
-9. To complete the installation, exit Copilot CLI by using the command `/exit`, then `/exit` again, then re-open Copilot by running `copilot --yolo`.
+9. To complete the installation, exit Copilot CLI by using the command `/exit`, then `/exit` again, then re-open Copilot by running `copilot`.
 
 With `.github/lsp.json` committed and `jdtls` installed, every contributor now gets the same compiler-backed view of AssetTrack's Java code.
 
@@ -259,7 +262,7 @@ As highlighted previously, app modernization follows a cycle of research, coding
 1. Turn what you just learned into a short playbook so the next service reuses the recipe. Ask Copilot to write it from the actual work, not from theory, by sending the following prompt:
 
     ```text
-    Using the the learnings and process we just followed, let's create an updated migration-playbook.md file that will supersede the original. Bring over anything applicable generalized from the original research, and any lessons from the upgrade you just performed.
+    Using the learnings and process we just followed, let's create an updated migration-playbook.md file that will supersede the original. Bring over anything applicable generalized from the original research, and any lessons from the upgrade you just performed.
     ```
 
 2. Ask Copilot to update the agent with any learnings it has that might improve the process by using the following prompt:
@@ -293,7 +296,7 @@ Modernizing the first service was the expensive part. The second one is where bu
     Modernize services/auth-svc following the guidelines provided in the agent, and give me a final status report at the end. The baseline test suite from the previous exercise is already in place, so confirm it passes and start from the toolchain phase.
     ```
 
-    The agent performs the upgrade, following the steps lessons from your research and the first migration process.
+    The agent performs the upgrade, following the steps and lessons from your research and the first migration process.
 
 5. Once the work is complete, ask Copilot to create a PR with your new agent, playbook, and newly upgraded services by using the following prompt:
 
