@@ -59,9 +59,12 @@ Before pointing Copilot CLI at the codebase, you need to know the app runs in it
 
 Copilot CLI is the primary tool you'll spend the rest of the course driving, so the final setup step is to get it installed, signed in, and verified inside the codespace. You'll do this in a second terminal so the app keeps running undisturbed in the first one — that side-by-side layout (app on the left, agent on the right) is the workflow you'll use for every exercise that follows. Authenticating once now means later modules can jump straight into prompting instead of stopping to handle a login flow.
 
+> [!NOTE]
+> `--yolo` lets Copilot read files, run commands, and call tools without pausing to ask. That's safe here because your codespace is a disposable container whose token only reaches this repository (or your fork), so anything Copilot does stays inside your copy of AssetTrack.
+
 1. In your codespace, press <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>`</kbd> to open a new terminal.
 2. Install Copilot CLI by following the [official install instructions][copilot-cli-install].
-3. Run `copilot` to start the CLI.
+3. Run `copilot --yolo` to start Copilot CLI.
 4. Follow the prompts to sign in with your GitHub account and authenticate.
 5. Once you reach the prompt, enter `hello` and press <kbd>Enter</kbd>.
 6. Confirm Copilot CLI responds.

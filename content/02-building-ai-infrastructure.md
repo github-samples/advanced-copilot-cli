@@ -69,15 +69,17 @@ Let's start by capturing existing conventions and patterns in the codebase in a 
 
 ### Generate the baseline instructions
 
+> [!NOTE]
+> `--yolo` lets Copilot read files, run commands, and call tools without pausing to ask. That's safe here because your codespace is a disposable container whose token only reaches this repository (or your fork), so anything Copilot does stays inside your copy of AssetTrack.
+
 1. Return to your codespace. If you closed it, navigate to your repository on GitHub.com, select **Code** > **Codespaces**, then reopen your existing codespace.
-2. Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`) and select **Chat: New Copilot CLI Session to the side** 
-3. If prompted, trust the project folder by selecting **Yes, and remember this folder for future sessions**.
-4. Run `/models`, select **Auto** from the list and **Enter**
-5. Run `/init`. 
-    
+2. Open a terminal by selecting <kbd>Ctrl</kbd> + <kbd>`</kbd>, then run `copilot --yolo` from the repository root to start Copilot CLI.
+3. Run `/models`, select **Auto** from the list, and select <kbd>Enter</kbd>.
+4. Run `/init`.
+
     Copilot scans the repository and generates a `.github/copilot-instructions.md` file. You'll see the agent reviewing available docs, reading through the code, it may also try to run build and test-related commands, then draft the instructions file based on its findings.
 
-6. Open `.github/copilot-instructions.md` and review the generated content. What you need to be asking yourself as you review is *"If Copilot followed these instructions exactly, would it produce better, acceptable code?"* If the answer is "no" or "maybe", revise the instructions removing anything that isn't helpful or accurate, clarify what is too vague and add any important rules or conventions the agent missed. 
+5. Open `.github/copilot-instructions.md` and review the generated content. What you need to be asking yourself as you review is *"If Copilot followed these instructions exactly, would it produce better, acceptable code?"* If the answer is "no" or "maybe", revise the instructions removing anything that isn't helpful or accurate, clarify what is too vague and add any important rules or conventions the agent missed.
 
 > [!TIP]
 > Re-run `/init` when the instructions start drifting significantly from reality either after a major restructure, after adopting a new framework or when Copilot consistently produces code that violates your current conventions. You can also run it frequently as a diagnostic tool to see what Copilot *thinks* your conventions are and if you are not happy with the "perceptions", treat that as a sign you need to improve on your code quality and consistency.

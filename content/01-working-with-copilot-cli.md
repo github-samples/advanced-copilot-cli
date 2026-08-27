@@ -197,7 +197,7 @@ As you likely expected, there's quite a bit going on behind the scenes with Copi
     Selecting **Yes** will allow for the first call only, and the next two will require separate approvals. **Yes, and don't ask again for `gh issue` in this repo (*path*)** will allow Copilot CLI to always call the `gh issue` CLI tool for this repository.
 
 > [!NOTE]
-> "Don't ask again" choices are saved per folder in `~/.copilot/permissions-config.json`, so they carry across sessions in that repository. You can also pre-approve tools when you launch with `--allow-tool` — for example, `copilot --allow-tool write --allow-tool 'shell(git:*)'` — which skips the prompt for exactly those tools while still asking about anything else. The codespace for this course ships with a set of local tools already approved this way, so later modules start Copilot without stopping for permission on routine local work.
+> "Don't ask again" choices are saved per folder in `~/.copilot/permissions-config.json`, so they carry across sessions in that repository. You can also pre-approve tools when you launch with `--allow-tool` — for example, `copilot --allow-tool write --allow-tool 'shell(git:*)'` — which skips the prompt for exactly those tools while still asking about anything else. The rest of this course launches Copilot with `--yolo`, the blanket version of the same idea, so later modules don't stop for these prompts on routine work.
 
 > [!IMPORTANT]
 > Ensure you always consider the implications of granting Copilot or any AI tool permissions to perform actions on your behalf.
